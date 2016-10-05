@@ -48,11 +48,13 @@ try {
 	//for appointment process
 	if($response['result']['action'] == 'appointment-action'){
 	    $datetime = $response['result']['parameters']['date-time'];
-	    $datetime = str_replace('T', ' ', $datetime);
-		$datetime = str_replace('Z', '', $datetime);
-		$appdatetime = explode(" ",$datetime);
-		$appdate = $appdatetime[0];
-		$apptime = $appdatetime[1];
+	    //$datetime = str_replace('T', ' ', $datetime);
+		//$datetime = str_replace('Z', '', $datetime);
+		//$appdatetime = explode(" ",$datetime);
+		//$appdate = $appdatetime[0];
+		//$apptime = $appdatetime[1];
+		$appdate = $response['result']['parameters']['date'];
+		$apptime = $response['result']['parameters']['time'];
 
 		$fb_user = $response['result']['parameters']['fb_user'];
 		
